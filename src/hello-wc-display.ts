@@ -1,27 +1,19 @@
 const states = new WeakMap();
-import { controller } from "@github/catalyst";
+import { attr, controller } from "@github/catalyst";
 
 @controller
 class HelloWcDisplayElement extends HTMLElement {
-  constructor() {
-    super()
-    const state = { message: "empty" };
-  }
+  @attr message: string = "Waiting...";
 
-  static get observedAttrbutes() {
-    return ["message"];
-  }
-
-  attributeChangedCallback(name: string, value: string) {
-    console.log("IN TEH DISPLAY: " + newVal);
-    if (name === "message") {
-      this.message = newVal;
-    }
+  connectedCallback() {
+    this.update();
   }
 
   update() {
     this.innerHTML = `
-      <h1>${this.message}</h1>
+      <div style="clear: both;">
+        <b>Message:</b> ${this.message}
+      </div>
     `;
   }
 }

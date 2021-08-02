@@ -18,9 +18,11 @@ class HelloWcElement extends HTMLElement {
     this.innerHTML = `
       <h1>Web Component Starter</h1>
       <section class="welcome">
-        <small>Temp ${this.message}</small>
-        <hello-wc-message data-action="customsubmit:hello-wc#alert"></hello-wc-message>
-        <hello-wc-display message="${this.message}"></hello-wc-display>
+        <hello-wc-display data-message="${this.message}"></hello-wc-display>
+
+        <div style="padding: 1em; background-color: #f7f7f7;">
+          <hello-wc-message data-action="customsubmit:hello-wc#alert"></hello-wc-message>
+        </div>
       </section>
     `
   }
