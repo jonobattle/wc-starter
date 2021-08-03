@@ -16,6 +16,7 @@
         "mutation-observer": "^1.0.3"
     },
     "devDependencies": {
-        "parcel-bundler": "^1.12.5"
+        "parcel-bundler": "^1.12.5",
+        "typescript": "^4.3.5"
     }
 }
